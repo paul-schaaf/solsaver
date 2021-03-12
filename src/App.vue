@@ -97,15 +97,7 @@ export default {
     ]
   }),
   methods: {
-    onSubmit() {
-      this.$notify({
-        group: "OK",
-        title: "Success!",
-        text: "Your SOL is back in your main account!"
-      });
-      this.isLoading = false;
-    },
-    async onSubmit2() {
+    async onSubmit() {
       this.isLoading = true;
       try {
         const connection = new Connection(
