@@ -11,6 +11,12 @@
         <div id="info-text">
           <p>You sent your hard-earned SOL to a token account address? 🤦🥲</p>
           <p>This app helps you get it back! 🥳</p>
+          <a
+            href="https://github.com/paul-schaaf/solsaver"
+            target="_blank"
+            rel="noopener noreferrer"
+            >source code</a
+          >
         </div>
         <v-form v-model="validForm" id="form" @submit.prevent="onSubmit">
           <v-text-field
