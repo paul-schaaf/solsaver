@@ -77,8 +77,8 @@ const getMintPubkeyFromTokenAccountPubkey = async (
 
 const walletMap = {
   sollet: "https://www.sollet.io",
-  bonfida: "",
-  solflare: ""
+  bonfida: "https://www.bonfida.com/wallet",
+  solflare: "https://www.solflare.com"
 };
 
 export default {
@@ -86,7 +86,7 @@ export default {
 
   data: () => ({
     isLoading: false,
-    wallets: ["sollet" /* , "bonfida", "solflare" */],
+    wallets: ["sollet", "bonfida", "solflare"],
     wallet: "sollet",
     validForm: true,
     tokenAccountAddress: "",
