@@ -259,7 +259,11 @@ export default {
 
 #form {
   margin-top: 10px;
-  width: 600px;
+  width: 300px;
+
+  @media (min-width: 600px) {
+    width: 600px;
+  }
 }
 
 .vue-notification {
