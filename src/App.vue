@@ -179,10 +179,17 @@ export default {
           associatedTokenAddress
         );
 
-        if (
-          !associatedTokenData.value ||
-          associatedTokenAddress.equals(tokenPublicKey)
-        ) {
+        if (associatedTokenAddress.equals(tokenPublicKey)) {
+          const lamportsToReviveAccount = await Token.getMinBalanceRentForExemptAccount(
+            connection
+          );
+          const transferToAssoIx = SystemProgram.transfer({
+            fromPubkey: wallet.publicKey,
+            toPubkey: associatedTokenAddress,
+            lamports: lamportsToReviveAccount
+          });
+          ixs.push(transferToAssoIx);
+        } else if (!associatedTokenData.value) {
           const createAssoIx = Token.createAssociatedTokenAccountInstruction(
             ASSOCIATED_TOKEN_PROGRAM_ID,
             TOKEN_PROGRAM_ID,
